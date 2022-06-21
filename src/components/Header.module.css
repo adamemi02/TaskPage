@@ -1,0 +1,9 @@
+.header{
+    border-style:solid;
+    box-sizing: border-box;
+    border-width: 2.5px;
+    margin-left:10px;
+    width:94%;
+    height:30px;
+    
+}

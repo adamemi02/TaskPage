@@ -1,0 +1,23 @@
+.Action{
+    display:flex;
+}
+.O{
+    
+    border-style:solid;
+    width:20px;
+    height:20px;
+}
+
+
+.Open{
+    
+    border-style:solid;
+    width:50px;
+
+}
+table,th,td{
+    border:0.5px solid black;}
+td{
+    width:80px;
+    height:60px;
+}

@@ -1,0 +1,18 @@
+.Navigation{
+    border-style:solid;
+    box-sizing: border-box;
+    width:100%;
+    height:10%;
+    border-width: 2px;
+    text-align: center;
+    
+}
+.Navigation:hover{
+    color:blue;
+}
+.Nav{
+    box-sizing: border-box;
+    border-style:solid;
+    height:500px;
+    width:75px;
+}
