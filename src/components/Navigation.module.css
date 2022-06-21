@@ -6,6 +6,7 @@
     border-width: 2px;
     text-align: center;
     
+    
 }
 .Navigation:hover{
     color:blue;
@@ -15,4 +16,5 @@
     border-style:solid;
     height:500px;
     width:75px;
+
 }
