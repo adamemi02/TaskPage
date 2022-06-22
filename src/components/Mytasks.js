@@ -3,22 +3,22 @@ import classes from './Mytasks.module.css';
 function Mytasks()
 {
     return(
-        <div>
+        <div className={classes.Mytasks}>
             
             <p>Open:4</p>
             <p>In progress:3</p>
             <p>Done:5</p>
-            <button>Create new</button>
+            <div className={classes.Create}>Create new</div>
             <table>
                 <tr>
-                    <th>No.</th>
+                    <th className={classes.Firstcolumn}>No.</th>
                     <th>Description</th>
                     <th>Date</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td className={classes.Firstcolumn}>1</td>
                     <td>Finish my Homework</td>
                     <td>12/12/2021</td>
                     <td>
@@ -31,14 +31,21 @@ function Mytasks()
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td className={classes.Firstcolumn}></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td> </td>
                 </tr>
                 <tr>
+                    <td className={classes.Firstcolumn}></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> </td>
+                </tr>
+                <tr className={classes.Lastrow}>
+                    <td className={classes.Firstcolumn}></td>
                     <td></td>
                     <td></td>
                     <td></td>

@@ -2,7 +2,7 @@ import React from "react";
 import classes from './TaskForm.module.css';
 function TaskForm(){
         return (
-         <div>
+         <div className={classes.Taskform}>
              <h2>Form</h2>
 
           <form>

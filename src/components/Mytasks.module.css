@@ -1,3 +1,10 @@
+.Mytasks{
+    position:absolute;
+    top:35px;
+    left:80px;
+    color:blue;
+}
+
 .Action{
     display:flex;
 }
@@ -16,8 +23,24 @@
 
 }
 table,th,td{
-    border:0.5px solid black;}
+    border:2px solid black;}
 td{
+    width:150px;
+    height:70px;
+}
+.Firstcolumn{
+    width:40px;
+
+}
+.Lastrow{
+    height:270px;
+
+}
+.Create{
+    box-sizing: border-box;
+    border-style:solid;
+    border-color:blue;
     width:80px;
-    height:60px;
+    color:blue;
+
 }
