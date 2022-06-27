@@ -15,7 +15,7 @@ input{
     border-width:3px;
     border-color:black;
 }
-button{
+.Button1{
     position:absolute;
     right:0;
     top:300px;

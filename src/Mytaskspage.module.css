@@ -1,6 +1,15 @@
+.ButtonClick{
+    position:relative;
+}
+
 .Image{
     position:absolute;
     top:50px;
     left:550px;
 }
 
+button{
+    border-style:solid;
+    border-color:black;
+    background-color:white;;
+}

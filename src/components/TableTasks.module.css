@@ -1,0 +1,19 @@
+.TableTasks{
+    position:absolute;
+    top:180px;
+    left:80px;
+}
+
+table,th,td{
+    border:2px solid black;}
+td{
+    width:150px;
+    height:70px;
+}
+.Firstcolumn{
+    width:40px;
+
+}
+.Lastrow{
+    height:185px;
+}

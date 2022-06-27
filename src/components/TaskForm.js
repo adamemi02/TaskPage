@@ -19,7 +19,7 @@ function TaskForm(){
                 <input type="text"/>
             </label>
           </form>
-          <button>Add task</button>
+          <button className={classes.Button1}>Add task</button>
           </div>
         );
     
