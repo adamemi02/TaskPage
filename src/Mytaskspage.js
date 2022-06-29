@@ -6,6 +6,7 @@ import classes from './Mytaskspage.module.css';
 import Mytasks from './components/Mytasks';
 import TableTasks from './components/TableTasks';
 import ModalStuff from './ModalStuff';
+import Button from './components/Button.js';
 
 export default class Mytaskspage extends React.Component {
   constructor(props){
@@ -13,10 +14,10 @@ export default class Mytaskspage extends React.Component {
 
 
   this.state={
-   tasks:[{nr:1,description:"Task nr1",Date:"12/12/2020",Status:[{id:'open',lable:'open'}],Action:<div><button>D</button><button>E</button><button>O</button></div>},
-   {nr:2,description:"Task nr2",Date:"20/12/2020",Status:[{id:'open',lable:'open'}],Action:<div><button >D</button><button>E</button><button>O</button></div>},
-   {nr:3,description:"Task nr3",Date:"30/12/2020",Status:[{id:'open',lable:'open'}],Action:<div><button >D</button><button>E</button><button>O</button></div>},
-   {nr:4,description:"Task nr4",Date:"10/12/2020",Status:[{id:'open',lable:'open'}],Action:<div><button>D</button><button>E</button><button>O</button></div>}]};
+   tasks:[{nr:1,description:"Task nr1",Date:"12/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />},
+   {nr:2,description:"Task nr2",Date:"20/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />},
+   {nr:3,description:"Task nr3",Date:"30/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />},
+   {nr:4,description:"Task nr4",Date:"10/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />}]};
    function deleteRow(clickedIndex) {
       const newTasks = this.state.tasks.filter((task, index) => clickedIndex !== index);
     
