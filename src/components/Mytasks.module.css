@@ -1,14 +1,14 @@
-.Mytasks{
+.mytasks{
     position:absolute;
     top:35px;
     left:80px;
     color:blue;
 }
 
-.Action{
+.action{
     display:flex;
 }
-.O{
+.o{
     
     border-style:solid;
     width:20px;
@@ -16,7 +16,7 @@
 }
 
 
-.Open{
+.open{
     
     border-style:solid;
     width:50px;
@@ -28,15 +28,15 @@ td{
     width:150px;
     height:70px;
 }
-.Firstcolumn{
+.firstcolumn{
     width:40px;
 
 }
-.Lastrow{
+.lastrow{
     height:270px;
 
 }
-.Create{
+.create{
     box-sizing: border-box;
     border-style:solid;
     border-color:blue;

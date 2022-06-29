@@ -5,7 +5,7 @@ function Modal(props){
 
     return(
 
-        <div className={classes.Modal}>
+        <div className={classes.modal}>
             <div>Task 1</div>
             <div>Description:Finish My Homework</div>
             <div>Date:12/12/2021</div>

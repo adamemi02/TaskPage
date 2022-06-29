@@ -1,4 +1,4 @@
-.Navigation{
+.navigation_option{
     border-style:solid;
     box-sizing: border-box;
     width:100%;
@@ -9,10 +9,10 @@
     
     
 }
-.Navigation:hover{
+.navigation_option:hover{
     color:blue;
 }
-.Nav{
+.navigation{
     box-sizing: border-box;
     border-style:solid;
     position:absolute;

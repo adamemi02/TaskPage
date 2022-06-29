@@ -1,4 +1,4 @@
-.TableTasks{
+.tableTasks{
     position:absolute;
     top:180px;
     left:80px;
@@ -10,10 +10,10 @@ td{
     width:150px;
     height:70px;
 }
-.Firstcolumn{
+.firstcolumn{
     width:40px;
 
 }
-.Lastrow{
+.lastrow{
     height:185px;
 }

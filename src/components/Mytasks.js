@@ -3,12 +3,12 @@ import classes from './Mytasks.module.css';
 function Mytasks()
 {
     return(
-        <div className={classes.Mytasks}>
+        <div className={classes.mytasks}>
             
             <p>Open:4</p>
             <p>In progress:3</p>
             <p>Done:5</p>
-            <div className={classes.Create}>Create new</div>
+            <div className={classes.create}>Create new</div>
         </div>
     );
 

@@ -2,7 +2,7 @@ import React from "react";
 import classes from './TaskForm.module.css';
 function TaskForm(){
         return (
-         <div className={classes.Taskform}>
+         <div className={classes.taskform}>
              <h2>Form</h2>
 
           <form>
@@ -19,10 +19,13 @@ function TaskForm(){
                 <input type="text"/>
             </label>
           </form>
-          <button className={classes.Button1}>Add task</button>
+          <button className={classes.task_form__add_task_btn}>Add task</button>
           </div>
         );
-    
+
 
 }
 export default TaskForm;
+
+// rename button1 to something more specific,
+// ex: task-form__add-task-btn
