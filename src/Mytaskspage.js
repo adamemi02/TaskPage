@@ -33,11 +33,10 @@ export default class Mytaskspage extends React.Component {
 
    this.showModal =(clickedId) => {
 
+    console.log(clickedId);
     const obiect=this.state.tasks.filter(element=>{return element.nr===clickedId});
     this.setState({openedTask:obiect});
-
-     
-
+    console.log(this.state);
        return <Modal openedTask={this.state.openedTask}/>
      
    }
@@ -59,7 +58,7 @@ export default class Mytaskspage extends React.Component {
     </div>
        <TaskForm />
        <TableTasks tasks={this.state.tasks} deleteRow={this.deleteRow} showModal={this.showModal}/>
-       <ModalStuff/>
+       
 
 
 
