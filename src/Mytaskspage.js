@@ -6,7 +6,7 @@ import classes from './Mytaskspage.module.css';
 import Mytasks from './components/Mytasks';
 import TableTasks from './components/TableTasks';
 import ModalStuff from './ModalStuff';
-import Button from './components/Button.js';
+
 
 export default class Mytaskspage extends React.Component {
   constructor(props){
@@ -14,17 +14,27 @@ export default class Mytaskspage extends React.Component {
 
 
   this.state={
-   tasks:[{nr:1,description:"Task nr1",Date:"12/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />},
-   {nr:2,description:"Task nr2",Date:"20/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />},
-   {nr:3,description:"Task nr3",Date:"30/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />},
-   {nr:4,description:"Task nr4",Date:"10/12/2020",Status:[{id:'open',lable:'open'}],Action:<Button />}]};
-   function deleteRow(clickedIndex) {
-      const newTasks = this.state.tasks.filter((task, index) => clickedIndex !== index);
-    
-     this.setState({tasks: newTasks});
-     }
+   tasks:[{nr:1,description:"Task nr1",date:"12/12/2020",status:[{id:'open',lable:'open'}]},
+   {nr:2,description:"Task nr2",date:"20/12/2020",status:[{id:'open',lable:'open'}]},
+   {nr:3,description:"Task nr3",date:"30/12/2020",status:[{id:'open',lable:'open'}]},
+   {nr:4,description:"Task nr4",date:"10/12/2020",status:[{id:'open',lable:'open'}]}
+  ]
+  };
+
+   this.deleteRow = (clickedId) => {
+     console.log(clickedId);
+     const newTasks=[];
+     for(let i=0;i<this.state.tasks.length;i++)
+     {if(this.state.tasks[i].nr!==clickedId)
+     newTasks.push(this.state.tasks[i]);}
+
+    this.setState({tasks:newTasks});
+
+   }
+     
 
   }
+
 
 
 
@@ -38,7 +48,7 @@ export default class Mytaskspage extends React.Component {
       <Mytasks/>
     </div>
        <TaskForm />
-       <TableTasks tasks={this.state.tasks}/>
+       <TableTasks tasks={this.state.tasks} deleteRow={this.deleteRow}/>
        <ModalStuff/>
 
 
@@ -48,6 +58,7 @@ export default class Mytaskspage extends React.Component {
   );
  }
  }
+
 
 // try to remove all the import lines which are not used
 

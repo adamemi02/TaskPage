@@ -1,7 +1,11 @@
 import React from "react";
 import classes from "./TableTasks.module.css";
 
+
+
 function TableTasks(props) {
+  var dictionar=props.tasks;
+  
   return(
   <table className={classes.tableTasks}>
   <thead>
@@ -14,14 +18,16 @@ function TableTasks(props) {
     </tr>
   </thead>
   <tbody key="tbody">
-    {props.tasks.map((item) => {
+    {dictionar.map((item,index) => {
       return (
         <tr key={item.nr}>
           <td className={classes.firstcolumn}>{item.nr}</td>
           <td>{ item.description }</td>
-          <td>{ item.Date }</td>
-          <td>{ item.Status[0].id }</td>
-          <td>{item.Action}</td>
+          <td>{ item.date }</td>
+          <td>{ item.status[0].id }</td>
+          <td>
+            <button onClick={()=>props.deleteRow(item.nr)}>D</button>
+            </td>
         </tr>
       );
     })}
