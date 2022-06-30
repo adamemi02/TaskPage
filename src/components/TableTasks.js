@@ -26,7 +26,11 @@ function TableTasks(props) {
           <td>{ item.date }</td>
           <td>{ item.status[0].id }</td>
           <td>
+            <div>
             <button onClick={()=>props.deleteRow(item.nr)}>D</button>
+            <button onClick={()=>props.showModal(item.nr)}>O</button>
+            <button>E</button>
+            </div>
             </td>
         </tr>
       );
