@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './TaskForm.module.css';
-function TaskForm(){
+function TaskForm(props){
         return (
          <div className={classes.taskform}>
              <h2>Form</h2>
@@ -20,6 +20,7 @@ function TaskForm(){
             </label>
           </form>
           <button className={classes.task_form__add_task_btn}>Add task</button>
+          <button className={classes.x} onClick={props.taskInvisible}>X</button>
           </div>
         );
 
@@ -27,5 +28,3 @@ function TaskForm(){
 }
 export default TaskForm;
 
-// rename button1 to something more specific,
-// ex: task-form__add-task-btn

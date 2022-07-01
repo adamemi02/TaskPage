@@ -1,9 +1,6 @@
 import React from "react";
 import Modal from "./components/Modal";
 import Backdrop from "./components/Backdrop";
-import {useState} from 'react';
-import logo from "./POZA.png";
-import classes from "./components/ModalStuff.module.css";
 
 
 function ModalStuff(props){
@@ -22,4 +19,3 @@ function ModalStuff(props){
 }
 export default ModalStuff;
 
-// there should be an empty line between each method definition

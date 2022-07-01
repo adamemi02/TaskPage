@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './Mytasks.module.css';
-function Mytasks()
+function Mytasks(props)
 {
     return(
         <div className={classes.mytasks}>
@@ -8,7 +8,8 @@ function Mytasks()
             <p>Open:4</p>
             <p>In progress:3</p>
             <p>Done:5</p>
-            <div className={classes.create}>Create new</div>
+            <div className={classes.create} onClick={props.taskVisible}>Create new</div>
+            
         </div>
     );
 

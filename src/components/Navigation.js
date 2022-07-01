@@ -13,6 +13,3 @@ function Navigation(){
 }
 export default Navigation;
 
-// you can rename the first classname to "navigation" - same as the component
-// and the other class names to navigation__option
-// to use the BEM notation
