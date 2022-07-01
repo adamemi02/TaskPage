@@ -22,9 +22,9 @@ function Modal(props){
                     { props.afisareModal.description }
                 </span>
                 </div>
-            <div>Date<span>{props.afisareModal.date}</span></div>
-            <div>Status</div>
-            <div>Notes<span>{props.afisareModal.notes}</span></div>
+            <div>Date:<span>{props.afisareModal.date}</span></div>
+            <div>Status:<span>{props.afisareModal.status[0].id}</span></div>
+            <div>Notes:<span>{props.afisareModal.notes}</span></div>
         </div>
 
     );

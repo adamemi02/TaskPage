@@ -9,15 +9,11 @@ import classes from "./components/ModalStuff.module.css";
 function ModalStuff(props){
     var obiectModal=props.obiect;
     var isModalok=props.isModalVisible;
-    function closeModalHandler(){
-        isModalok=false;
-        console.log("De ce nu mergi");
-    }
     
 
    return(
        <div>
-           {(isModalok) && <Backdrop onCancel={closeModalHandler} afisareModal={obiectModal}/>}
+           {(isModalok) && <Backdrop onCancel={props.closeModal} afisareModal={obiectModal}/>}
        {isModalok &&<Modal  afisareModal={obiectModal}/>}
        </div>
 

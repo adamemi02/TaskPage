@@ -42,7 +42,9 @@ export default class Mytaskspage extends React.Component {
 
      
    }
-   
+   this.closeModal=()=>{
+     this.setState({isModalVisible:false});
+   }
      
 
   }
@@ -61,7 +63,7 @@ export default class Mytaskspage extends React.Component {
     </div>
        <TaskForm />
        <TableTasks tasks={this.state.tasks} deleteRow={this.deleteRow} showModal={this.showModal}/>
-        <ModalStuff  isModalVisible={this.state.isModalVisible}  obiect={this.state.openedTask} closeModal={this.closeModal}/>
+       { <ModalStuff  isModalVisible={this.state.isModalVisible}  obiect={this.state.openedTask} closeModal={this.closeModal}/>}
        
 
 
