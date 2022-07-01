@@ -11,20 +11,20 @@ function Modal(props){
         <div className={classes.modal}>
             <div>
                 Task:
-                <div>
-                    {props.openedTask[0].nr}
-                </div>
+                <span>
+                    {props.afisareModal.nr}
+                </span>
 
             </div>
             <div>
                 Description:
-                <div>
-                    {props.openedTask[0].description}
+                <span>
+                    { props.afisareModal.description }
+                </span>
                 </div>
-                </div>
-            <div>Date<div>{props.openedTask[0].date}</div></div>
+            <div>Date<span>{props.afisareModal.date}</span></div>
             <div>Status</div>
-            <div>Notes<div>{props.openedTask[0].notes}</div></div>
+            <div>Notes<span>{props.afisareModal.notes}</span></div>
         </div>
 
     );

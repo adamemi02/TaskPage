@@ -20,7 +20,8 @@ export default class Mytaskspage extends React.Component {
    {nr:3,description:"Task nr3",date:"30/12/2020",status:[{id:'open',lable:'open'}],notes:"papagal"},
    {nr:4,description:"Task nr4",date:"10/12/2020",status:[{id:'open',lable:'open'}],notes:"lebada"}
   ],
-  openedTask:[]
+  openedTask:{},
+  isModalVisible:false
   
   };
 
@@ -35,11 +36,13 @@ export default class Mytaskspage extends React.Component {
 
     console.log(clickedId);
     const obiect=this.state.tasks.filter(element=>{return element.nr===clickedId});
-    this.setState({openedTask:obiect});
+    this.setState({openedTask:obiect[0]});
+    this.setState({isModalVisible:true});
     console.log(this.state);
-       return <Modal openedTask={this.state.openedTask}/>
+
      
    }
+   
      
 
   }
@@ -58,6 +61,7 @@ export default class Mytaskspage extends React.Component {
     </div>
        <TaskForm />
        <TableTasks tasks={this.state.tasks} deleteRow={this.deleteRow} showModal={this.showModal}/>
+        <ModalStuff  isModalVisible={this.state.isModalVisible}  obiect={this.state.openedTask} closeModal={this.closeModal}/>
        
 
 

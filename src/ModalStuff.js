@@ -6,20 +6,19 @@ import logo from "./POZA.png";
 import classes from "./components/ModalStuff.module.css";
 
 
-function ModalStuff(){
-
-
-    const[modalisOpen,setModalIsOpen]=useState(false);
+function ModalStuff(props){
+    var obiectModal=props.obiect;
+    var isModalok=props.isModalVisible;
     function closeModalHandler(){
-        setModalIsOpen(false);}
-    function deleteHandler(){
-     setModalIsOpen(true);
-   }
+        isModalok=false;
+        console.log("De ce nu mergi");
+    }
+    
+
    return(
        <div>
-           <img src={logo} className={classes.image} alt="Logo" onClick={deleteHandler}/>
-           {modalisOpen && <Backdrop onCancel={closeModalHandler}/>}
-       {modalisOpen &&<Modal/>}
+           {(isModalok) && <Backdrop onCancel={closeModalHandler} afisareModal={obiectModal}/>}
+       {isModalok &&<Modal  afisareModal={obiectModal}/>}
        </div>
 
    );

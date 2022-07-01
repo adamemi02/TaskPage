@@ -6,7 +6,7 @@ function Backdrop(props){
     return(
 
         <div className={classes.backdrop} onClick={props.onCancel}>
-            <Modal />
+            <Modal afisareModal={props.afisareModal}/>
         </div>
 
     );
