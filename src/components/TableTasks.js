@@ -35,13 +35,7 @@ function TableTasks(props) {
         </tr>
       );
     })}
-    <tr key={"header"} className={classes.lastrow}>
-      <td className={classes.firstcolumn}></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    
   </tbody>
 </table>
   );
