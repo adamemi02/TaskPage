@@ -24,12 +24,17 @@ function TableTasks(props) {
           <td className={classes.firstcolumn}>{item.nr}</td>
           <td>{ item.description }</td>
           <td>{ item.date }</td>
-          <td>{ item.status[0].id }</td>
+          <td>
+            <select>
+              <option>{item.status[0]}</option>
+              <option>{item.status[1]}</option>
+            </select>
+          </td>
           <td>
             <div>
             <button onClick={()=>props.deleteRow(item.nr)}>D</button>
             <button onClick={()=>props.showModal(item.nr)}>O</button>
-            <button onClick={props.taskVisible}>E</button>
+            <button onClick={()=>props.e_clicked(item.nr)}>E</button>
             </div>
             </td>
         </tr>
