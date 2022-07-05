@@ -6,6 +6,7 @@
     border-width: 2px;
     text-align: center;
     position:relative;
+    display: block;
     
     
 }
@@ -20,5 +21,6 @@
     left:5px;
     height:98%;
     width:75px;
+    
 
 }

@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter} from "react-router-dom";
+import Allpages from './Allpages';
 
-import Mytaskspage from './Mytaskspage';
 
-
-ReactDOM.render(<Mytaskspage />,document.getElementById('root'));
+ReactDOM.render(
+    <BrowserRouter>
+    <Allpages/>
+    </BrowserRouter>,
+document.getElementById('root')
+);
 
