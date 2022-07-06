@@ -1,0 +1,10 @@
+.help_page_tab{
+    position:absolute;
+    left: 60px;
+    top:0;
+}
+.help_page_string{
+    position:absolute;
+    left:60px;
+    top:30px;
+}

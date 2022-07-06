@@ -15,7 +15,7 @@ function Allpages () {
             <Route path ='/home' element={<Navigation/>} exact/>
             <Route path ='/my-task' element={<Mytaskspage/>} exact/>
             <Route path ='/graph' element={<Navigation/>} exact/>
-            <Route path='/help' element={<Help_page/>} exact/>
+            <Route path='/help'  element={[<Help_page/>,<Navigation/>]} exact/>
         </Routes>
     </main>
     );

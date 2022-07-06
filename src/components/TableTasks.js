@@ -26,8 +26,7 @@ function TableTasks(props) {
           <td>{ item.date }</td>
           <td>
             <select>
-              <option>{item.status[0]}</option>
-              <option>{item.status[1]}</option>
+            {item.status.map(element=>{return(<option key={element}>{element}</option>)})}
             </select>
           </td>
           <td>
