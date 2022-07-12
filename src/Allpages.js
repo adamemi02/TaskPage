@@ -3,7 +3,7 @@ import Mytaskspage from "./Mytaskspage";
 import Navigation from "./components/Navigation";
 import { Route,Routes } from "react-router-dom";
 import React from "react";
-import Help_page from "./components/Help_page";
+import HelpPage from "./components/HelpPage";
 
 
 
@@ -15,7 +15,7 @@ function Allpages () {
             <Route path ='/home' element={<Navigation/>} exact/>
             <Route path ='/my-task' element={<Mytaskspage/>} exact/>
             <Route path ='/graph' element={<Navigation/>} exact/>
-            <Route path='/help'  element={[<Help_page/>,<Navigation/>]} exact/>
+            <Route path='/help'  element={[<HelpPage/>,<Navigation/>]} exact/>
         </Routes>
     </main>
     );
