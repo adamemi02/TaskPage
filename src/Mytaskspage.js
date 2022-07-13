@@ -54,10 +54,6 @@ export default class Mytaskspage extends React.Component {
      var aux;  
      const newTasks=this.state.tasks.filter(element=>{return element.nr!==clickedId})
     this.setState({tasks:newTasks});
-    fetch('https://jsonplaceholder.typicode.com/todos')
-  .then(response => response.json())
-  .then(json =>aux=json);
-  console.log(aux);
    }
 
    this.showModal =(clickedId) => {

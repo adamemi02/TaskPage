@@ -7,15 +7,30 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-export default function TableMui(){
+export default class TableMui extends React.Component(){
+
+    constructor(props){
+        super(props);
+        this.state={date:[{userId:4,id:4,title:"dsadas",completed:false}],tableVisible:false};
+
+        this.afisareTabel = () => {
+            this.setState({tableVisible:true})
+            fetch('https://jsonplaceholder.typicode.com/todos')
+            .then((response) => response.json())
+            .then(json => {
+                this.setState({ date:json});
+            });
+        }
+    }
+     
+     
+    
 
     
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(json =>{
-
-        const lista=json;
-        return(
+    render(){    
+    return(
+        <div>
+            <button onClick={this.afisareTabel}>Tabel</button>
             <TableContainer component={Paper}>
      <Table aria-label="simple table">
        <TableHead>
@@ -27,7 +42,8 @@ export default function TableMui(){
          </TableRow>
        </TableHead>
        <TableBody>
-         {lista.map((row) => {
+           
+         {this.state.date.map((row) => {
               return(
            <TableRow key={row.UserId}>
              <TableCell component="th" scope="row">
@@ -41,8 +57,9 @@ export default function TableMui(){
        </TableBody>
      </Table>
    </TableContainer>
-        )
-    })
+   </div>
+        );
+}
 }
 
       
