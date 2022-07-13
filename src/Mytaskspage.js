@@ -50,9 +50,14 @@ export default class Mytaskspage extends React.Component {
     this.setState({openStatus:open1,inProgressStatus:inprogress,doneStatus:done});
   }
 
-   this.deleteRow = (clickedId) => {  
+   this.deleteRow = (clickedId) => {
+     var aux;  
      const newTasks=this.state.tasks.filter(element=>{return element.nr!==clickedId})
     this.setState({tasks:newTasks});
+    fetch('https://jsonplaceholder.typicode.com/todos')
+  .then(response => response.json())
+  .then(json =>aux=json);
+  console.log(aux);
    }
 
    this.showModal =(clickedId) => {
@@ -213,5 +218,13 @@ export default class Mytaskspage extends React.Component {
   );
  }
  }
+
+
+ /*dsandaa 
+ ans myTask(){
+   return(
+     MyTask()
+   )
+ }*/
 
 
