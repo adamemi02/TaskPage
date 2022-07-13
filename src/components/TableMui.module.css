@@ -1,0 +1,26 @@
+button{
+    position: absolute;
+    top:0;
+    right:200px;
+}
+.tabel{
+    top:0;
+    position: absolute;
+    left:80px;
+    width:auto;
+    
+}
+.firstrow{
+    width:5px;
+
+}
+.secondrow{
+    width:10px;
+   
+}
+.thirdrow{
+    width:20px;
+   
+}
+.lastrow{
+}

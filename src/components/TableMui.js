@@ -6,22 +6,23 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import classes from './TableMui.module.css'
 
-export default class TableMui extends React.Component(){
+export default class TableMui extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.state={date:[{userId:4,id:4,title:"dsadas",completed:false}],tableVisible:false};
+    
+        state={date:[],tableVisible:false};
 
-        this.afisareTabel = () => {
+        afisareTabel = () => {
             this.setState({tableVisible:true})
             fetch('https://jsonplaceholder.typicode.com/todos')
             .then((response) => response.json())
             .then(json => {
                 this.setState({ date:json});
             });
+            console.log(4);
         }
-    }
+    
      
      
     
@@ -30,15 +31,16 @@ export default class TableMui extends React.Component(){
     render(){    
     return(
         <div>
+            
             <button onClick={this.afisareTabel}>Tabel</button>
-            <TableContainer component={Paper}>
-     <Table aria-label="simple table">
+            <TableContainer className={classes.tabel} style={{width:"700px"}}>
+     <Table aria-label="simple table" >
        <TableHead>
          <TableRow>
-           <TableCell>User Id</TableCell>
-           <TableCell align="right">ID</TableCell>
-           <TableCell align="right">Title</TableCell>
-           <TableCell align="right">Completed</TableCell>
+           <TableCell className={classes.firstrow}>User Id</TableCell>
+           <TableCell  className={classes.secondrow}align="right">ID</TableCell>
+           <TableCell align="right" className={classes.thirdrow}>Title</TableCell>
+           <TableCell align="right" className={classes.lastrow}>Completed</TableCell>
          </TableRow>
        </TableHead>
        <TableBody>
@@ -46,12 +48,12 @@ export default class TableMui extends React.Component(){
          {this.state.date.map((row) => {
               return(
            <TableRow key={row.UserId}>
-             <TableCell component="th" scope="row">
-               {row.UserId}
+             <TableCell component="th" scope="row" className={classes.firstrow}>
+               {row.userId}
              </TableCell>
-             <TableCell align="right">{row.id}</TableCell>
-             <TableCell align="right">{row.title}</TableCell>
-             <TableCell align="right">{row.completed}</TableCell>
+             <TableCell align="right" className={classes.secondrow}>{row.id}</TableCell>
+             <TableCell align="right" className={classes.thirdrow}>{row.title}</TableCell>
+             <TableCell align="right" className={classes.lastrow}>{""+row.completed}</TableCell>
            </TableRow>);
     })}
        </TableBody>
