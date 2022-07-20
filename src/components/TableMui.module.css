@@ -4,7 +4,7 @@ button{
     right:200px;
 }
 .tabel{
-    top:0;
+    top:50px;
     position: absolute;
     left:80px;
     width:auto;
@@ -22,5 +22,7 @@ button{
     width:20px;
    
 }
-.lastrow{
+.scrollit {
+    overflow:scroll;
+    height:600px;
 }

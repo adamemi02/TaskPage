@@ -17,3 +17,12 @@ td{
 .lastrow{
     height:185px;
 }
+.flex{
+    display:flex;
+}
+.nr1{
+    border-style:solid;
+    border-color: black;
+    border-width: 2px;
+    margin:2px;
+}

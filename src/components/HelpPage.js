@@ -58,14 +58,16 @@ export default class HelpPage extends React.Component {
       <TabContext value={this.state.value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList className={classes.help_page_tab} onChange={this.handleChange} aria-label="lab API tabs example">
-            <Tab label="Tab 1 " value="1" />
-            <Tab label="Tab 2 " value="2" />
-            <Tab label="Tab 3" value="3" />
-            <Tab label="Tab 4 " value="4"/>
+          <Tab label="Tab 1" value="1"/>
+            <Tab label="Tab 2" value="2"/>
+            <Tab label="Tab 1" value="1"/>
+            <Tab label="Tab 2" value="2"/>
+            <Tab label="Tab 3" value="3"/>
+            <Tab label="Tab 4" value="4"/>
           </TabList>
         </Box>
         <div className={classes.help_page_string}>
-        <TabPanel value="1">
+        <TabPanel value="1" className={classes.tab1}>
           <Button color="secondary">Secondary</Button>
           <Button variant="contained" color="success">Succes</Button>
           <Button variant="outlined" color="error">Error</Button>
@@ -82,7 +84,7 @@ export default class HelpPage extends React.Component {
         </TabPanel>
         <TabPanel value="3">
         <div>
-      <Button onClick={this.handleClick}>Open simple snackbar</Button>
+      <Button  onClick={this.handleClick} sx={{position:'absolute',top:"50px",left:"50px"}} >Open simple snackbar</Button>
       <Snackbar
         open={this.state.open}
         autoHideDuration={6000}

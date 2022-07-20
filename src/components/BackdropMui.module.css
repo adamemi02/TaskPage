@@ -1,0 +1,13 @@
+.backdrop{
+    position:absolute;
+    width:99%;
+    height:99%;
+    top:0;
+    background-color:grey;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width:30px;
+    border-color:black;
+    
+}
+

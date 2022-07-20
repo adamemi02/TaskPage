@@ -65,13 +65,16 @@ function TableTasks(props) {
             {item.status.map(element=>{return(<option key={element.label} value={element.label}>{element.label}</option>)})}
             </select>
           </td>
-          <td>
-            <div>
-            <button onClick={()=>{props.deleteRow(item.nr)}}>D</button>
-            <button onClick={()=>props.showModal(item.nr)}>O</button>
-            <button onClick={()=>props.e_clicked(item.nr)}>E</button>
+          <td className>
+            <div className={classes.flex}>
+            <div className={classes.nr1} onClick={()=>{props.deleteRow(item.nr)}}>D</div>
+            <div className={classes.nr1} onClick={()=>props.showModal(item.nr)}>O</div>
+            <div className={classes.nr1} onClick={()=>props.e_clicked(item.nr)}>E</div>
             </div>
+            
             </td>
+            
+           
         </tr>
       );
     })}
