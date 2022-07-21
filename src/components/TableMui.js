@@ -18,6 +18,7 @@ export default  class TableMui  extends React.Component{
 
   
     state={date:[],
+          openedTask:{},
           isTaskFormVisible:false,
           button_E_clicked:{bool:false,index:-1},
           isModalVisible:false,
@@ -50,15 +51,25 @@ export default  class TableMui  extends React.Component{
          this.setState({date:newTasks});
         }*/
 
-         deleteRowMui=(clickedID)=> {
-           axios.delete('https://jsonplaceholder.typicode.com/todos/${clickedId}')
-        }
+        async deleteRowMui(clickedId) {
+          var aux;
+            {await axios
+            .get(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)
+            .then(informatii=>aux=informatii.data);}
+            {await axios.delete(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)}
+              
+          const newTasks=this.state.date.filter(element=>{return element.id!=aux.id})
+         this.setState({date:newTasks});
+
+       }
         
-        e_clicked=(clickedID) => {
-          const aux1=this.state.date;
-          const aux=aux1.filter(element=>{return element.id===clickedID});
-          this.setState({button_E_clicked:{bool:true,index:clickedID},isTaskFormVisible:true,task:aux[0]});
-          console.log(this.state.button_E_clicked);
+        async e_clicked(clickedId) {
+
+          await
+          axios
+          .get(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)
+          .then(informatii =>this.setState({task:informatii.data,isTaskFormVisible:true,button_E_clicked:{bool:true,index:clickedId}}));
+    
           
      
         }
@@ -97,12 +108,16 @@ export default  class TableMui  extends React.Component{
         closeModal=()=>{
           this.setState({isModalVisible:false});
         }
-        showModal =(clickedId) => {
-          const obiect=this.state.date.filter(element=>{return element.userId===clickedId});
-          this.setState({openedTask:obiect[0]});
+        
+         async  showModal(clickedId){
+           await
+          axios
+          .get(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)
+          .then(informatii =>this.setState({openedTask:informatii.data}));
           this.setState({isModalVisible:true});
-           
+
          }
+         
         
 
     
