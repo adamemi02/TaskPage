@@ -44,11 +44,16 @@ export default  class TableMui  extends React.Component{
         componentDidMount(){
           this.afisareTabel();
         }
-        deleteRowMui = (clickedId) => {
+        /*deleteRowMui = (clickedId) => {
           var aux;  
           const newTasks=this.state.date.filter(element=>{return element.id!==clickedId})
          this.setState({date:newTasks});
+        }*/
+
+         deleteRowMui=(clickedID)=> {
+           axios.delete('https://jsonplaceholder.typicode.com/todos/${clickedId}')
         }
+        
         e_clicked=(clickedID) => {
           const aux1=this.state.date;
           const aux=aux1.filter(element=>{return element.id===clickedID});
