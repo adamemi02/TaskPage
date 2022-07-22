@@ -100,7 +100,7 @@ export default  class TableMui  extends React.Component{
             this.setState({isTaskFormVisible:false});
      
              if(this.state.task.description &&this.state.task.date)
-             {axios.put(`https://jsonplaceholder.typicode.com/posts`,{userId:this.state.task.userId,title:this.state.task.title,body:this.state.task.body,id:this.state.date.length+1})
+             {axios.post(`https://jsonplaceholder.typicode.com/posts`,{userId:this.state.task.userId,title:this.state.task.title,body:this.state.task.body,id:this.state.date.length+1})
              .then(informatii=>this.setState({date:informatii.data}));
            
              }}
