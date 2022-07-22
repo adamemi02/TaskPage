@@ -91,27 +91,7 @@ export default  class TableMui  extends React.Component{
           this.setState({button_E_clicked:{bool:false,index:-1}});
         }
        
-        async addTask(e){
-          
-           
-             this.setState({isTaskFormVisible:false});
-             e.preventDefault();                                                                                                                                     
-             console.log(this.state.task);
-             
-             var aux2=[];
-             var index=this.state.button_E_clicked.index;
-             
-             
-             await axios.put(`https://jsonplaceholder.typicode.com/posts/${index}`,this.state.task);
-             {await axios.get(`https://jsonplaceholder.typicode.com/posts/`)
-             .then(informatii=>this.setState({date:informatii.date}));}
-             
-           
-
-     
-            
-          
-        }
+       
         async addTask(e){
 
           console.log(4);
