@@ -23,7 +23,7 @@ function ModalMui(props){
                 </span>
                 </div>
             <div>Title:<span>{props.afisareModal.title}</span></div>
-            <div>Completed:<span>{""+props.afisareModal.compleded}</span></div>
+            <div>Completed:<span>{props.afisareModal.body}</span></div>
         </div>
 
     );

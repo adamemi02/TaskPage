@@ -22,8 +22,8 @@ function TaskFormMui(props){
               <input type="text"  id="data1" value={props.task.title} onChange={(e)=>props.modifyInput(e,'title')}/>
             </div>
             <div>
-              <label htmlFor="notes1">Completed</label>
-              <input type="text"  id="notes1" value={props.task.completed} onChange={e=>props.modifyInput(e,'completed')}/>
+              <label htmlFor="notes1">Body</label>
+              <input type="text"  id="notes1" value={props.task.body} onChange={e=>props.modifyInput(e,'body')}/>
             </div>
             <div>
             <button className={classes.task_form__add_task_btn} onClick={(e)=>props.addTask(e)} disabled={props.buttonDisabled} >Save task</button>

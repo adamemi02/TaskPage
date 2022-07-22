@@ -22,12 +22,12 @@ export default  class TableMui  extends React.Component{
           isTaskFormVisible:false,
           button_E_clicked:{bool:false,index:-1},
           isModalVisible:false,
-          task:{userId:"",title:"",completed:""}}
+          task:{userId:"",title:"",body:""}}
 
         afisareTabel=()=>{
             
           axios
-          .get('https://jsonplaceholder.typicode.com/todos')
+          .get('https://jsonplaceholder.typicode.com/posts')
           .then(informatii =>this.setState({date:informatii.data}) )
           .catch(error => console.log(error));
         }
@@ -51,23 +51,35 @@ export default  class TableMui  extends React.Component{
          this.setState({date:newTasks});
         }*/
 
-        async deleteRowMui(clickedId) {
+        /*async deleteRowMui(clickedId) {
           var aux;
             {await axios
-            .get(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)
+            .get(`https://jsonplaceholder.typicode.com/posts/${clickedId}`)
             .then(informatii=>aux=informatii.data);}
-            {await axios.delete(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)}
+            {await axios.delete(`https://jsonplaceholder.typicode.com/posts/${clickedId}`)}
               
           const newTasks=this.state.date.filter(element=>{return element.id!=aux.id})
          this.setState({date:newTasks});
 
-       }
+       }*/
+       async deleteRowMui(clickedId) {
+        var aux;
+          {await axios.delete(`https://jsonplaceholder.typicode.com/posts/${clickedId}`)}
+          {await axios
+          .get(`https://jsonplaceholder.typicode.com/posts`)
+          .then(informatii=>this.setState({date:informatii.data}));}
+            
+        
+
+     }
+
+       
         
         async e_clicked(clickedId) {
 
           await
           axios
-          .get(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)
+          .get(`https://jsonplaceholder.typicode.com/posts/${clickedId}`)
           .then(informatii =>this.setState({task:informatii.data,isTaskFormVisible:true,button_E_clicked:{bool:true,index:clickedId}}));
     
           
@@ -75,11 +87,11 @@ export default  class TableMui  extends React.Component{
         }
         taskInvisible=()=>{
           this.setState({isTaskFormVisible:false});
-          this.setState({task:{description:'',date:'',notes:''}});
+          this.setState({task:{userId:'',title:'',body:''}});
           this.setState({button_E_clicked:{bool:false,index:-1}});
         }
        
-        addTask=(e)=>{
+        async addTask(e){
           
            
              this.setState({isTaskFormVisible:false});
@@ -89,19 +101,47 @@ export default  class TableMui  extends React.Component{
              var aux2=[];
              var index=this.state.button_E_clicked.index;
              
-             for(let i=0;i<this.state.date.length;i++)
-             {
-               if(this.state.date[i].id===index)
-               aux2.push(this.state.task);
-               else aux2.push(this.state.date[i]);
-             }
-             this.setState({date:aux2});
+             
+             await axios.put(`https://jsonplaceholder.typicode.com/posts/${index}`,this.state.task);
+             {await axios.get(`https://jsonplaceholder.typicode.com/posts/`)
+             .then(informatii=>this.setState({date:informatii.date}));}
+             
            
 
      
             
           
         }
+        async addTask(e){
+
+          console.log(4);
+          if(this.state.button_E_clicked.bool===false)
+           {e.preventDefault();
+            this.setState({isTaskFormVisible:false});
+     
+             if(this.state.task.description &&this.state.task.date)
+             {axios.put(`https://jsonplaceholder.typicode.com/posts`,{userId:this.state.task.userId,title:this.state.task.title,body:this.state.task.body,id:this.state.date.length+1})
+             .then(informatii=>this.setState({date:informatii.data}));
+           
+             }}
+           else{
+            this.setState({isTaskFormVisible:false});
+            e.preventDefault();                                                                                                                                     
+            console.log(this.state.task);
+            
+            var aux2=[];
+            var index=this.state.button_E_clicked.index;
+            
+            
+            await axios.put(`https://jsonplaceholder.typicode.com/posts/${index}`,this.state.task);
+            {await axios.get(`https://jsonplaceholder.typicode.com/posts/`)
+            .then(informatii=>this.setState({date:informatii.data}));}
+             
+           }
+     
+           }  
+          
+        
         modifyInput=(e,inputType)=>{
           this.setState({task:{...this.state.task,[inputType]:e.target.value}});
         }
@@ -109,29 +149,24 @@ export default  class TableMui  extends React.Component{
           this.setState({isModalVisible:false});
         }
         
-         async  showModal(clickedId){
+         async showModal(clickedId){
            await
           axios
-          .get(`https://jsonplaceholder.typicode.com/todos/${clickedId}`)
+          .get(`https://jsonplaceholder.typicode.com/posts/${clickedId}`)
           .then(informatii =>this.setState({openedTask:informatii.data}));
           this.setState({isModalVisible:true});
 
          }
-         
-        
-
-    
-
-    
-        
-    
-     
-     
-    
+         taskVisible=()=>{
+          this.setState({isTaskFormVisible:true});
+          this.setState({task:{userId:"",title:"",body:""}});
+          this.setState({button_E_clicked:{bool:false,index:-1}});
+        }
 
     render(){
     return(
       <div>
+         <div className={classes.create} onClick={this.taskVisible}>Create new</div>
         
           
           { this.state.date.length>0 && this.state.date &&
@@ -145,7 +180,7 @@ export default  class TableMui  extends React.Component{
            <TableCell className={classes.firstrow}>User Id</TableCell>
            <TableCell  className={classes.secondrow}align="right">ID</TableCell>
            <TableCell align="right" className={classes.thirdrow}>Title</TableCell>
-           <TableCell align="right" className={classes.lastrow}>Completed</TableCell>
+           <TableCell align="right" className={classes.lastrow}>Body</TableCell>
            <TableCell align="right" className={classes.thirdrow}>Action</TableCell> 
          </TableRow>
        </TableHead>
@@ -159,7 +194,7 @@ export default  class TableMui  extends React.Component{
              </TableCell>
              <TableCell align="right" className={classes.secondrow}>{row.id}</TableCell>
              <TableCell align="right" className={classes.thirdrow}>{row.title}</TableCell>
-             <TableCell align="right" className={classes.lastrow}>{""+row.completed}</TableCell>
+             <TableCell align="right" className={classes.lastrow}>{row.body}</TableCell>
              <TableCell align="right" className={classes.thirdrow}>
                <div style={{display:"flex"}}>
                <div style={{margin:"3px"}} onClick={()=>this.e_clicked(row.id)}>E</div>
