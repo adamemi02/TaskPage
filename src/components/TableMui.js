@@ -92,18 +92,22 @@ export default  class TableMui  extends React.Component{
         }
        
        
-        async addTask(e){
+          addTask(e){
 
           console.log(4);
           if(this.state.button_E_clicked.bool===false)
-           {e.preventDefault();
-            this.setState({isTaskFormVisible:false});
+           {
+             console.log(this.state.task);
+            
      
-             if(this.state.task.description &&this.state.task.date)
-             {axios.post(`https://jsonplaceholder.typicode.com/posts`,{userId:this.state.task.userId,title:this.state.task.title,body:this.state.task.body,id:this.state.date.length+1})
+             
+             { axios.post(`https://jsonplaceholder.typicode.com/posts`,{userId:this.state.task.userId,title:this.state.task.title,body:this.state.task.body,id:this.state.date.length+1})
+             axios.get('https://jsonplaceholder.typicode.com/posts')
              .then(informatii=>this.setState({date:informatii.data}));
+             
            
-             }}
+             }
+             this.setState({isTaskFormVisible:false});}
            else{
             this.setState({isTaskFormVisible:false});
             e.preventDefault();                                                                                                                                     
@@ -113,9 +117,10 @@ export default  class TableMui  extends React.Component{
             var index=this.state.button_E_clicked.index;
             
             
-            await axios.put(`https://jsonplaceholder.typicode.com/posts/${index}`,this.state.task);
-            {await axios.get(`https://jsonplaceholder.typicode.com/posts/`)
+             axios.put(`https://jsonplaceholder.typicode.com/posts/${index}`,this.state.task);
+            { axios.get(`https://jsonplaceholder.typicode.com/posts/`)
             .then(informatii=>this.setState({date:informatii.data}));}
+            this.setState({button_E_clicked:{bool:false,index:-1}});
              
            }
      
