@@ -1,7 +1,7 @@
 
 import Mytaskspage from "./Mytaskspage";
 import Navigation from "./components/Navigation";
-import Graph from "./components/GraphFile";
+import Graph from "./Graph";
 import { Route,Routes } from "react-router-dom";
 import React from "react";
 import HelpPage from "./components/HelpPage";
