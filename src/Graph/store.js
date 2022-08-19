@@ -1,6 +1,6 @@
 import { createStore } from '@reduxjs/toolkit';
-import reducer from "./reducer";
+import graph from "./reducers/graph";
 
-const store=createStore(reducer);
+const store=createStore(graph);
 
 export default store;
