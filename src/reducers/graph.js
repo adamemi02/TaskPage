@@ -1,11 +1,10 @@
-import * as actions from "./Graph/action-types";
 
 const initialState={
     graphOption:[
         {
             id:'bars',
             label:'Bars'
-            
+
         },
         {
             id:'lines',
