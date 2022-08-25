@@ -1,15 +1,15 @@
-import * as actions from "./Graph/action-types";
-
 const initialState={
     graphOption:[
         {
             id:'bars',
-            label:'Bars'
-            
+            label:'Bars',
+            key:"dasdasd"
+
         },
         {
             id:'lines',
-            label:'Lines'
+            label:'Lines',
+            key:"dasda"
         }
     ]
 }
