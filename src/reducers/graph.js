@@ -1,22 +1,39 @@
+import * as actions from "./Graph/action-types";
+
 const initialState={
     graphOption:[
         {
             id:'bars',
             label:'Bars',
-            key:"dasdasd"
+            
 
         },
         {
             id:'lines',
             label:'Lines',
-            key:"dasda"
+            
         }
-    ]
+    ],
+    displayedWord:" "
 }
 
 export default function graph(state=initialState,action){
-    switch(action.type)
+    if(action.type===actions.barsAction)
     {
-        default:return state;
+        return[
+            ...state,
+            {
+                displayedWord:"bars"
+            }
+        ]
+    }
+    if(action.type===actions.linesAction)
+    {
+        return[
+            ...state,
+            {
+                displayedWord:"lines"
+            }
+        ]
     }
 }

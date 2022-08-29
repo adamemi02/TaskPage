@@ -1,1 +1,2 @@
-export const changeProp='ChangeProp';
+export const barsAction='Bars';
+export const linesAction='lines';
