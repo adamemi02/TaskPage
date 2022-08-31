@@ -1,19 +1,18 @@
-import * as actions from "./Graph/action-types"
 
-export function showBars(){
+
+export function showWord(word){
+    if(word==='bars')
     return{
-        type:actions.barsAction,
+        type:'bars',
         payload:{
-            wordDisplayed:"bars"
+            wordShown:'bars'
         }
     }
-}
-
-export function showLines(){
+    if(word==='lines')
     return{
-        type:actions.linesAction,
+        type:'lines',
         payload:{
-            wordDisplayed:"lines"
+            wordShown:'lines'
         }
     }
 }

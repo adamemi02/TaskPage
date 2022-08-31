@@ -1,4 +1,4 @@
-import * as actions from "./Graph/action-types";
+
 
 const initialState={
     graphOption:[
@@ -18,16 +18,16 @@ const initialState={
 }
 
 export default function graph(state=initialState,action){
-    if(action.type===actions.barsAction)
+    if(action.type==='bars')
     {
-        return[
+        return{
             ...state,
-            {
+            
                 displayedWord:"bars"
-            }
-        ]
+            
+        }
     }
-    if(action.type===actions.linesAction)
+    if(action.type==='action')
     {
         return[
             ...state,
@@ -35,5 +35,8 @@ export default function graph(state=initialState,action){
                 displayedWord:"lines"
             }
         ]
+    }
+    else{
+        return state;
     }
 }

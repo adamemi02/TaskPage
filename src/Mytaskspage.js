@@ -182,6 +182,13 @@ export default class Mytaskspage extends React.Component {
      console.log(this.state.tasks);
 
    }
+
+   this.divAppear=()=>{
+     return(
+       <div>4444444444444444444444444444444444444444444444444444</div>
+     )
+
+   }
    
    
 
@@ -203,7 +210,7 @@ export default class Mytaskspage extends React.Component {
       <Mytasks taskVisible={this.taskVisible} tabel={this.state}/>
     </div>
        {(this.state.isTaskFormVisible)&&<TaskForm e_value={this.state.e_value} taskInvisible={this.taskInvisible}  addTask={(e) => this.addTask(e)} modifyInput={(e, inputType) => this.modifyInput(e, inputType)} task={this.state.task} buttonDisabled={(!this.state.task.description || !this.state.task.date)} />}
-       <TableTasks modifyPriority={this.modifyPriority}  showValues={this.showValues} modifyValues={this.modifyValues} e_clicked={this.e_clicked} tasks={this.state.tasks} deleteRow={this.deleteRow} showModal={this.showModal} taskVisible={this.taskVisible}/>
+       <TableTasks divAppear={this.divAppear} modifyPriority={this.modifyPriority}  showValues={this.showValues} modifyValues={this.modifyValues} e_clicked={this.e_clicked} tasks={this.state.tasks} deleteRow={this.deleteRow} showModal={this.showModal} taskVisible={this.taskVisible}/>
        { <ModalStuff  isModalVisible={this.state.isModalVisible}  obiect={this.state.openedTask} closeModal={this.closeModal}/>}
        
 

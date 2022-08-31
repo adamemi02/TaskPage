@@ -5,7 +5,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Button from '@mui/material/Button';
 import React, {useState} from "react";
 import classes from "./Graph.module.css";
-import {showBars,showLines} from "./actions/graph";
+import { showWord } from "../actions/graph";
+
 
  function Graph(props)  {
     const [anchorEl,setAnchorEl]=useState(null);
@@ -23,7 +24,7 @@ import {showBars,showLines} from "./actions/graph";
             >
                 {props.graphOption.map((option) =>
                     <MenuItem key={option.label}>
-                        <ListItemText>{option.label}</ListItemText>
+                        <ListItemText onClick={showWord(option.label)}>{option.label}</ListItemText>
                     </MenuItem>
                 )}
             </Menu>
